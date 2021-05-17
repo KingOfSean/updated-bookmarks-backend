@@ -5,7 +5,7 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { hash, jsonAuth, auth } = require('./Controllers/authController');
-const User = require('./models/User');
+const User = require('./Models/User');
 const SECRET = process.env.SECRET_KEY;
 const app = express();
 const PORT = process.env.PORT || 9000;
@@ -23,8 +23,8 @@ mongoose.connect(process.env.MONGO_URI, {
     useFindAndModify: false
 });
 mongoose.connection.once('connected', () => console.log('What a time to be alive!'));
-app.use('/bookmarks', require('./controllers/bookmarksController'));
-app.use('/users', require('./controllers/usersController'));
+app.use('/bookmarks', require('./Controllers/bookmarksController'));
+app.use('/users', require('./Controllers/usersController'));
 
 
 //Login
