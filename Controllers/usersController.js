@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
-const Bookmark = require('../models/Bookmark');
+const User = require('../Models/User');
+const Bookmark = require('../Models/Bookmark');
 const { jsonAuth, auth } = require('./authController');
 
 
